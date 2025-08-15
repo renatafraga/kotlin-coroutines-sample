@@ -1,0 +1,8 @@
+RELATÓRIO DE PERFORMANCE - KOTLIN COROUTINES
+=============================================================
+Data/Hora: Fri Aug 15 18:46:42 -03 2025
+Configuração:
+- Warmup requests: 1
+- Test requests: 3
+- Concurrent requests: 5
+
