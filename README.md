@@ -4,10 +4,10 @@ Este projeto demonstra a efetividade das **Kotlin Coroutines** comparando difere
 
 ## 📊 Principais Resultados
 
-Baseado nos benchmarks executados, **Spring WebFlux com Coroutines** apresentou a melhor performance:
-- **96.5% mais rápido** que a abordagem mais lenta
-- **27.02 requisições/segundo** em testes de carga concorrente
-- **88ms** de tempo médio de resposta
+Baseado nos benchmarks executados com **20 requisições** (padronização para comparação), **Spring WebFlux com Coroutines** apresentou a melhor performance:
+- **96.6% mais rápido** que a abordagem mais lenta
+- **193.79 requisições/segundo** em testes de carga concorrente (100 requisições simultâneas)
+- **86ms** de tempo médio de resposta
 
 ## 🎯 Objetivo
 
@@ -145,13 +145,15 @@ Os relatórios são salvos em arquivos como `performance-report-YYYYMMDD-HHMMSS.
 - Recomendações técnicas
 - Cenários de uso para cada abordagem
 
-## 🏆 Resultados Típicos
+## 🏆 Resultados Oficiais (20 Requisições)
 
-| Abordagem                | Tempo Médio | Req/s | Uso Recomendado            |
-| ------------------------ | ----------- | ----- | -------------------------- |
-| **WebFlux + Coroutines** | ~88ms       | 27.02 | 🎯 **Melhor escolha geral** |
-| MVC + Coroutines         | ~142ms      | 18.75 | Migração gradual           |
-| MVC Blocking             | ~1068ms     | 5.17  | Baixa concorrência         |
+| Abordagem                | Tempo Médio | Req/s (Carga) | Uso Recomendado            |
+| ------------------------ | ----------- | ------------- | -------------------------- |
+| **WebFlux + Coroutines** | **86ms**    | **193.79**    | 🎯 **Melhor escolha geral** |
+| MVC + Coroutines         | 143ms       | 174.21        | Migração gradual           |
+| MVC Blocking             | 1060ms      | 104.38        | Baixa concorrência         |
+
+*Testes executados com 20 requisições sequenciais e 100 requisições concorrentes para carga*
 
 ## 🎯 Cenários de Uso Recomendados
 
@@ -199,7 +201,7 @@ Este projeto demonstra:
 
 - [`TECHNICAL_DETAILS.md`](./TECHNICAL_DETAILS.md) - Detalhes técnicos e arquitetura
 - [`EXAMPLES.md`](./EXAMPLES.md) - Exemplos práticos e cenários de teste
-- [`performance-report-*.txt`](./performance-report-20250815-184814.txt) - Relatórios de benchmark
+- [`performance-report-*.txt`](./performance-report-20250816-225541.txt) - Relatórios de benchmark oficiais
 - [`Makefile`](./Makefile) - Automação de tarefas e comandos
 
 ## 🤝 Contribuição
@@ -217,4 +219,6 @@ Este projeto é destinado para fins educacionais e de demonstração.
 
 ---
 
-**🎯 Conclusão**: Spring WebFlux com Kotlin Coroutines oferece a melhor combinação de performance, escalabilidade e experiência de desenvolvimento para aplicações modernas. 
+**🎯 Conclusão**: Spring WebFlux com Kotlin Coroutines oferece a melhor combinação de performance, escalabilidade e experiência de desenvolvimento para aplicações modernas.
+
+**📊 Comparação**: Este projeto utiliza **20 requisições** como padrão para permitir comparação direta com projetos similares como `java-virtual-threads-sample`. 
