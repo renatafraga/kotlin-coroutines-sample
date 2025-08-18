@@ -1,0 +1,80 @@
+RELATÓRIO DE PERFORMANCE - KOTLIN COROUTINES
+=============================================================
+Data/Hora: Mon Aug 18 10:39:24 -03 2025
+Configuração:
+- Warmup requests: 5
+- Test requests: 20
+- Concurrent requests: 100
+
+----------------------------------------
+TESTE: Spring MVC Blocking
+Endpoint: http://localhost:8080/api/mvc/persons/blocking?count=10
+Descrição: Spring MVC tradicional com blocking I/O
+Data/Hora: Mon Aug 18 10:39:56 -03 2025
+
+RESULTADOS:
+- Requisições válidas: 20/20
+- Tempo médio: 1054ms
+- Tempo mínimo: 1044ms
+- Tempo máximo: 1065ms
+
+----------------------------------------
+TESTE: Spring MVC com Coroutines
+Endpoint: http://localhost:8080/api/mvc/persons/async?count=10
+Descrição: Spring MVC com Kotlin Coroutines
+Data/Hora: Mon Aug 18 10:40:00 -03 2025
+
+RESULTADOS:
+- Requisições válidas: 20/20
+- Tempo médio: 142ms
+- Tempo mínimo: 133ms
+- Tempo máximo: 153ms
+
+----------------------------------------
+TESTE: WebFlux Traditional
+Endpoint: http://localhost:8080/api/webflux/persons/traditional-list?count=10
+Descrição: Spring WebFlux tradicional sem Coroutines
+Data/Hora: Mon Aug 18 10:40:14 -03 2025
+
+RESULTADOS:
+- Requisições válidas: 20/20
+- Tempo médio: 557ms
+- Tempo mínimo: 549ms
+- Tempo máximo: 564ms
+
+----------------------------------------
+TESTE: WebFlux Coroutines
+Endpoint: http://localhost:8080/api/webflux/persons/list?count=10
+Descrição: Spring WebFlux com Kotlin Coroutines
+Data/Hora: Mon Aug 18 10:40:17 -03 2025
+
+RESULTADOS:
+- Requisições válidas: 20/20
+- Tempo médio: 83ms
+- Tempo mínimo: 78ms
+- Tempo máximo: 88ms
+
+----------------------------------------
+TESTE: Benchmark Coroutines vs Blocking
+Endpoint: http://localhost:8080/api/benchmark/coroutines-vs-blocking?count=20
+Descrição: Benchmark direto Coroutines vs Blocking
+Data/Hora: Mon Aug 18 10:41:11 -03 2025
+
+RESULTADOS:
+- Requisições válidas: 20/20
+- Tempo médio: 2153ms
+- Tempo mínimo: 2148ms
+- Tempo máximo: 2176ms
+
+----------------------------------------
+TESTE: Benchmark WebFlux vs MVC
+Endpoint: http://localhost:8080/api/benchmark/webflux-vs-mvc?count=20
+Descrição: Benchmark WebFlux vs MVC com Coroutines
+Data/Hora: Mon Aug 18 10:41:16 -03 2025
+
+RESULTADOS:
+- Requisições válidas: 20/20
+- Tempo médio: 182ms
+- Tempo mínimo: 176ms
+- Tempo máximo: 215ms
+
